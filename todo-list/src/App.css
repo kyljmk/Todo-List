@@ -1,1 +1,88 @@
+* {
+    font-family: 'Source Code Pro', monospace;
+}
 
+body {
+    padding: 0 300px;
+    margin: 0;
+    min-width: 600px;
+}
+
+.app {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    background-color: #bee7e8;
+    margin: 0;
+    height: 900px;
+}
+
+.header--title {
+    color: #041b15;
+}
+
+.form--input, .form--button, .app--button {
+    border-radius: 5px;
+    border: 1px solid #7d8cc4;
+}
+
+.form--input {
+    height: 23px;
+    width: 220px;
+    margin-right: 10px;
+}
+
+.form--button {
+    padding: 4px;
+}
+
+.app--button {
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.todo--item {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 400px;
+    background-color: #a0d2db;
+    border: 1px solid #7d8cc4;
+    margin-top: 10px;
+    border-radius: 15px;
+}
+
+.todo--item--completed {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 400px;
+    border: 1px solid darkgray;
+
+    margin-top: 10px;
+    border-radius: 15px;
+}
+
+.todo--item--title {
+    width: 250px;
+    color: #041b15;
+}
+
+.todo--item--title--completed {
+    width: 250px;
+    text-decoration: line-through;
+    color: darkgrey;
+}
+
+.todo--item--button {
+    border-radius: 5px;
+    border: 1px solid #7d8cc4;
+    color: #041b15;
+
+}
+
+.todo--item--button--completed {
+    border-radius: 5px;
+    border: 1px solid darkgray;
+    color: darkgray;
+}
