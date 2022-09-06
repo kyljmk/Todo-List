@@ -2,8 +2,8 @@
 
 function Header() {
     return (
-        <header>
-            <h1 className="header--title" >Kyle's To-Do List</h1>
+        <header className="header">
+            <h1 className="header--title" >To-Do List And Task Generator</h1>
         </header>
     )
 }

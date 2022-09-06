@@ -1,4 +1,5 @@
 import './App.css';
+import Generator from './Generator';
 import Header from './Header';
 import Form from './Form';
 import Item from './Item';
@@ -13,12 +14,14 @@ function App() {
 
   const [randomItem, setRandomItem] = useState("")
 
-  function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
+  function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min) + min);
   }
 
   function generateRandomItem () {
-    const randomIndex = getRandomInt(items.length)
+    const randomIndex = getRandomInt(1, items.length)
 
     setRandomItem(items[randomIndex].title)
   }
@@ -61,18 +64,20 @@ function App() {
 
   return (
     <div className="app">
+      <Header />
       <Generator
         randomItem={randomItem}
         generateRandomItem={generateRandomItem}
       />
-      <Header />
-      <Form addItem={addItem} />
-      {itemList}
-      {items.length > 1 &&
-      <button
-        onClick={deleteCompleted}
-        className="app--button"
-      >Clear Completed</button>}
+      <div className="form--and--list">
+        <Form addItem={addItem} />
+        {itemList}
+        {items.length > 1 &&
+        <button
+          onClick={deleteCompleted}
+          className="app--button"
+        >Clear Completed</button>}
+      </div>
     </div>
   );
 }
